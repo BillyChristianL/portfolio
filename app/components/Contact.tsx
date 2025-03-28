@@ -14,7 +14,7 @@ const Contact = () => {
     const formData = new FormData(form);
   
     // Rest of your code remains the same...
-    const accessKey = process.env.ACCESS_KEY;
+    const accessKey = process.env.NEXT_PUBLIC_ACCESS_KEY;
     if (!accessKey) {
       setResult("Error: Missing access key");
       return;
@@ -31,7 +31,7 @@ const Contact = () => {
   
       if (data.success) {
         setResult("Form Submitted Successfully");
-        form.reset(); // Now using the typed form variable
+        form.reset(); 
       } else {
         console.log("Error", data);
         setResult(data.message);
