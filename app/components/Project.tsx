@@ -1,5 +1,5 @@
-import { assets, testimonials } from '@/assets/assets'
-import Image from 'next/image'
+import { testimonials } from '@/assets/assets'
+
 import React from 'react'
 import { AnimatedTestimonials } from './ui/animated-testimonials'
 

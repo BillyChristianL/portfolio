@@ -1,5 +1,4 @@
-import { assets, skillData } from '@/assets/assets'
-
+import {  skillData } from '@/assets/assets'
 import Image from 'next/image'
 import React from 'react'
 const Services = () => {

@@ -5,7 +5,7 @@ import { FloatingDock } from './ui/floating-dock';
 
 const Navbar = () => {
     const [isScroll, setIsScroll] = useState(false)
-    const sideMenuRef  = useRef<HTMLUListElement>(null)
+
    
     useEffect(()=> {
         window.addEventListener("scroll",()=> {

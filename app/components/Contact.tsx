@@ -5,38 +5,43 @@ import { IoIosSend } from "react-icons/io";
 const Contact = () => {
     const [result, setResult] = useState("");
 
-  const onSubmit = async (event:any) => {
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setResult("Sending....");
-    const formData = new FormData(event.target);
-
+    
+    // Add this type assertion:
+    const form = event.currentTarget as HTMLFormElement;
+    const formData = new FormData(form);
+  
+    // Rest of your code remains the same...
     const accessKey = process.env.ACCESS_KEY;
-        if (!accessKey) {
-            setResult("Error: Missing access key");
-            return;
-        }
-        formData.append("access_key", accessKey);
-
-        try {
-            const response = await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                body: formData
-            });
-
-            const data = await response.json();
-
-            if (data.success) {
-                setResult("Form Submitted Successfully");
-                (event.target as HTMLFormElement).reset();
-            } else {
-                console.log("Error", data);
-                setResult(data.message);
-            }
-        } catch (error) {
-            console.log("Error", error);
-            setResult("Failed to submit form");
-        }
+    if (!accessKey) {
+      setResult("Error: Missing access key");
+      return;
     }
+    formData.append("access_key", accessKey);
+  
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+  
+      const data = await response.json();
+  
+      if (data.success) {
+        setResult("Form Submitted Successfully");
+        form.reset(); // Now using the typed form variable
+      } else {
+        console.log("Error", data);
+        setResult(data.message);
+      }
+    } catch (error) {
+      console.log("Error", error);
+      setResult("Failed to submit form");
+    }
+
+  }
   return (
     <div id='contact' className='w-full px-[12%] py-10 scroll-mt-20'>
         <h4 className='text-center mb-2 text-lg font-serif'>

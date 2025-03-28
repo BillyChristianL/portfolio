@@ -119,67 +119,63 @@ const FloatingDockDesktop = ({
 };
 
 function IconContainer({
-    mouseX,
-    title,
-    icon,
-    href,
-  }: {
-    mouseX: MotionValue;
-    title: string;
-    icon: React.ReactNode;
-    href: string;
-  }) {
-    let ref = useRef<HTMLDivElement>(null);
-  
-    // Calculate distance from mouse to icon center
-    let distance = useTransform(mouseX, (val) => {
-      let bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
-      return val - bounds.x - bounds.width / 2;
-    });
-  
-    // Vertical movement (downward)
-    let yTransform = useTransform(distance, [-150, 0, 150], [0, 20, 0]); // Moves down 20px at center
-    let y = useSpring(yTransform, { 
-      mass: 0.1, 
-      stiffness: 150, 
-      damping: 12 
-    });
-  
-    // Scaling transforms (grow bigger)
-    let scaleTransform = useTransform(distance, [-150, 0, 150], [1, 1.5, 1]); // Scales up to 1.5x at center
-    let scale = useSpring(scaleTransform, {
-      mass: 0.1,
-      stiffness: 150,
-      damping: 12
-    });
-  
-    const [hovered, setHovered] = useState(false);
-  
-    return (
-      <Link href={href}>
+  mouseX,
+  title, // This is still passed in but not used - you might want to use it for accessibility
+  icon,
+  href,
+}: {
+  mouseX: MotionValue;
+  title: string;
+  icon: React.ReactNode;
+  href: string;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  // Calculate distance from mouse to icon center
+  const distance = useTransform(mouseX, (val) => {
+    const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
+    return val - bounds.x - bounds.width / 2;
+  });
+
+  // Vertical movement (downward)
+  const yTransform = useTransform(distance, [-150, 0, 150], [0, 20, 0]);
+  const y = useSpring(yTransform, { 
+    mass: 0.1, 
+    stiffness: 150, 
+    damping: 12 
+  });
+
+  // Scaling transforms (grow bigger)
+  const scaleTransform = useTransform(distance, [-150, 0, 150], [1, 1.5, 1]);
+  const scale = useSpring(scaleTransform, {
+    mass: 0.1,
+    stiffness: 150,
+    damping: 12
+  });
+
+  return (
+    <Link href={href} aria-label={title}> {/* Added aria-label for accessibility */}
+      <motion.div
+        ref={ref}
+        style={{ 
+          y,                    // Vertical movement
+          scale,               // Scaling animation
+          width: 40,           // Base size
+          height: 40,
+        }}
+        className="aspect-square rounded-full border-1 bg-gray-200 dark:bg-transparent flex items-center justify-center relative"
+      >
         <motion.div
-          ref={ref}
           style={{ 
-            y,                    // Vertical movement
-            scale,                 // Scaling animation
-            width: 40,            // Base size
-            height: 40,
+            width: 15, 
+            height: 15,
+            scale: 1.5,        // Inner icon scales slightly more
           }}
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
-          className="aspect-square rounded-full border-1 bg-gray-200 dark:bg-transparent flex items-center justify-center relative "
+          className="flex items-center justify-center"
         >
-          <motion.div
-            style={{ 
-              width: 15, 
-              height: 15,
-              scale: 1.5,          // Inner icon scales slightly more
-            }}
-            className="flex items-center justify-center"
-          >
-            {icon}
-          </motion.div>
+          {icon}
         </motion.div>
-      </Link>
-    );
-  }
+      </motion.div>
+    </Link>
+  );
+}

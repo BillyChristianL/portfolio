@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { assets, infoList, toolsData } from '@/assets/assets'
+import { assets, infoList } from '@/assets/assets'
 
 
 const About = () => {
@@ -31,21 +31,6 @@ const About = () => {
                         </li>
                     ))}
                 </ul>
-
-                {/* <h4 className='my-6 text-gray-700 font-serif'>
-                    Tools I Use
-                </h4> */}
-
-                {/* <ul className='flex items-center gap-3 sm:gap-5'>
-                    {toolsData.map((tool, index)=> (
-                        <li key={index} className='flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500 hover:shadow-boxShadow '>
-                            <Image src={tool} alt="tool" className='w-5 sm:w-7' />
-
-                        </li>
-                    ))}
-                </ul> */}
-
-
             </div>
         </div>
     </div>
