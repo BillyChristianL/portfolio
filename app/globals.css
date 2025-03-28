@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Ovo&display=swap');
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --lightHover: #fcf4ff;
+  --darkHover: #2a004a;
+  --darkTheme: #11001F;
+}
+
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'Outfit', sans-serif; /* Use Outfit for sans-serif */
+  --font-serif: 'Ovo', serif; /* Use Ovo for serif (optional) */
+  --font-mono: monospace; /* Keep monospace as is or change if needed */
+  --color-lightHover: var(--lightHover);
+  --color-darkHover: var(--darkHover);
+  --shadow-boxShadow: 4px 4px 0 #000;
+}
+
+@media (prefers-color-scheme: white) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+}
+
+.grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(200px, 1fr));
+  gap: 1rem; /* Adjust the gap as needed */
+}
