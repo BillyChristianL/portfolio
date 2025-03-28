@@ -15,7 +15,7 @@ const Header = () => {
           width={200} 
           height={200}
 />
-            <h3 className='flex items-center gap-2 text-xl md:text-2xl mb-3 font-serif'>I'm Billy Christian Lugito <GiRobotGolem   className='w-6  '/> </h3>
+            <h3 className='flex items-center gap-2 text-xl md:text-2xl mb-3 font-serif'>I&apos;m Billy Christian Lugito <GiRobotGolem   className='w-6  '/> </h3>
             <h1 className='text-3xl sm:text-6xl lg:text-[66px] font-serif'>
                 
                 Master Student in RWTH Aachen Germany
