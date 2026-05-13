@@ -6,4 +6,6 @@ export type Testimonial = {
   name: string;
   designation: string;
   src: StaticImageData ; 
+  category: string;
+  techStack: string[];
 };

@@ -3,10 +3,11 @@ import Image from 'next/image'
 import React from 'react'
 import {GiRobotGolem} from "react-icons/gi"
 import { IoCodeDownload } from "react-icons/io5";
+import ScrollReveal from './ui/scroll-reveal';
 
 const Header = () => {
   return (
-    <div className='w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4  '>
+    <ScrollReveal className='w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4'>
         <div className='items-center justify-center flex flex-col gap-2'>
         <Image 
           src={assets.profile_img} 
@@ -24,22 +25,21 @@ const Header = () => {
               Studying Automation Technology focuses on robotics, control systems, and industrial automation.
             </p>
             <div className='flex flex-col sm:flex-row items-center gap-4 mt-4'>
-                
-                <a href="/cv.pdf" download >
-                <button 
-                  className="flex flex-row justify-center items-center gap-2 px-8 py-0.5 rounded-md border-2 border-black white:border-white font-semibold bg-white text-black transition-all duration-200 text-sm 
+                <a
+                  href="/cv.pdf"
+                  download
+                  className="group flex flex-row justify-center items-center gap-2 px-8 py-0.5 rounded-md border-2 border-black white:border-white font-semibold bg-white text-black transition-all duration-200 text-sm 
                             shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] 
                             white:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)]
-                            hover:bg-gray-100 
-                            active:bg-gray-200 active:translate-y-1 active:shadow-[0px_0px_rgba(0,0,0)] active:white:shadow-[0px_0px_rgba(255,255,255)]">
+                            hover:-translate-y-0.5 hover:bg-gray-100 hover:shadow-[2px_2px_rgba(0,0,0),4px_4px_rgba(0,0,0),6px_6px_rgba(0,0,0)]
+                            active:bg-gray-200 active:translate-y-1 active:shadow-[0px_0px_rgba(0,0,0)] active:white:shadow-[0px_0px_rgba(255,255,255)]"
+                >
                             My resume 
-                    <IoCodeDownload className='size-6' />
-                </button>
+                    <IoCodeDownload className='size-6 transition-transform duration-300 group-hover:translate-y-0.5' />
                 </a> 
-                
             </div>
         </div>
-    </div>
+    </ScrollReveal>
   )
 }
 

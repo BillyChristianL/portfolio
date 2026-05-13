@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import React from 'react'
 import { assets, infoList } from '@/assets/assets'
+import ScrollReveal from './ui/scroll-reveal'
 
 
 const About = () => {
   return (
-    <div id='about' className='w-full px-[12%] py-10 scroll-mt-20'>
+    <ScrollReveal id='about' className='w-full px-[12%] py-10 scroll-mt-20'>
         <h4 className='text-center mb-2 text-lg font-serif'>
             Introduction
         </h4>
@@ -33,7 +34,7 @@ const About = () => {
                 </ul>
             </div>
         </div>
-    </div>
+    </ScrollReveal>
   )
 }
 

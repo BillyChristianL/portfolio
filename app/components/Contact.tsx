@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 
 import { IoIosSend } from "react-icons/io";
+import ScrollReveal from './ui/scroll-reveal';
 const Contact = () => {
     const [result, setResult] = useState("");
 
@@ -43,7 +44,7 @@ const Contact = () => {
 
   }
   return (
-    <div id='contact' className='w-full px-[12%] py-10 scroll-mt-20'>
+    <ScrollReveal id='contact' className='w-full px-[12%] py-10 scroll-mt-20'>
         <h4 className='text-center mb-2 text-lg font-serif'>
             Get in touch
         </h4>
@@ -63,18 +64,18 @@ const Contact = () => {
             <textarea rows={6} name="message" id="" placeholder='enter your message' required className='w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6 '></textarea>
             <button 
               type='submit'
-              className="flex flex-row w-max mx-auto text-xl justify-between items-center gap-2 px-8 py-0.5 rounded-md border-2 border-black white:border-white font-semibold bg-white text-black transition-all duration-200 text-sm 
+              className="group flex flex-row w-max mx-auto text-xl justify-between items-center gap-2 px-8 py-0.5 rounded-md border-2 border-black white:border-white font-semibold bg-white text-black transition-all duration-200 text-sm 
                         shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] 
                         white:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)]
-                        hover:bg-gray-100 
+                        hover:-translate-y-0.5 hover:bg-gray-100 hover:shadow-[2px_2px_rgba(0,0,0),4px_4px_rgba(0,0,0),6px_6px_rgba(0,0,0)]
                         active:bg-gray-200 active:translate-y-1 active:shadow-[0px_0px_rgba(0,0,0)] active:white:shadow-[0px_0px_rgba(255,255,255)]">
                         Submit 
 
-                        <IoIosSend className='size-5' />
+                        <IoIosSend className='size-5 transition-transform duration-300 group-hover:translate-x-1' />
             </button>
             <p className='mt-4'>{result}</p>
         </form>
-    </div>
+    </ScrollReveal>
   )
 }
 

@@ -36,6 +36,7 @@ import {
   IconUserCode,
   IconAdjustmentsCode,
   IconBrandTypescript,
+  IconTimeline,
   IconRocket,
   IconMessage,
 
@@ -58,6 +59,11 @@ export const links: NavLink[] = [
     title: "Skill",
     icon: <IconAdjustmentsCode className="h-full w-full text-neutral-500 dark:text-neutral-900" />,
     href: "#skill",
+  },
+  {
+    title: "Experience",
+    icon: <IconTimeline className="h-full w-full text-neutral-500 dark:text-neutral-900" />,
+    href: "#experience",
   },
   {
     title: "Project",
@@ -195,6 +201,8 @@ export const testimonials: Testimonial[] = [
     name: "Live 3D Printing Process: Real-Time Camera Feed",
     designation: "Laser Melting Innovations GmbH",
     src: lpbf,
+    category: "Software",
+    techStack: ["Python", "OpenCV", "Machine Vision"],
   },
   {
     id: 2,
@@ -203,6 +211,8 @@ export const testimonials: Testimonial[] = [
     name: "Beckhoff ADS Client for OVF File Execution on Machine",
     designation: "Laser Melting Innovations GmbH",
     src: laser,
+    category: "Automation",
+    techStack: ["C#", ".NET", "Beckhoff ADS", "G-code"],
   },
   {
     id: 3,
@@ -211,6 +221,8 @@ export const testimonials: Testimonial[] = [
     name: "Alpha REST API",
     designation: "Laser Melting Innovations GmbH",
     src: loggin,
+    category: "Software",
+    techStack: ["Python", "Django REST", "API", "Data Logging"],
   },
   {
     id: 4,
@@ -219,6 +231,8 @@ export const testimonials: Testimonial[] = [
     name: "IML Webimporter",
     designation: "Laser Melting Innovations GmbH",
     src: importer,
+    category: "Software",
+    techStack: ["Python", "Flask", "Grafana", "Database"],
   },
   {
     id: 5,
@@ -227,6 +241,8 @@ export const testimonials: Testimonial[] = [
     name: "LPBF Powder Preheating System Design",
     designation: "Laser Melting Innovations GmbH",
     src: heater,
+    category: "CAD",
+    techStack: ["SolidWorks", "CAD", "LPBF", "Mechanical Design"],
   },
   {
     id: 6,
@@ -235,6 +251,8 @@ export const testimonials: Testimonial[] = [
     name: "Development of a Robotic Adhesive Process Tool",
     designation: "RWTH - Automation technology for production systems",
     src: robot,
+    category: "Robotics",
+    techStack: ["Python", "Flask", "JavaScript", "Robotics"],
   },
   {
     id: 7,
@@ -243,6 +261,8 @@ export const testimonials: Testimonial[] = [
     name: "Automation of Water Plant",
     designation: "RWTH - Process Automation",
     src: plc,
+    category: "Automation",
+    techStack: ["PLC", "Codesys", "Process Automation", "Diagnostics"],
   },
   {
     id: 8,
@@ -251,6 +271,8 @@ export const testimonials: Testimonial[] = [
     name: "Bayesian Linear Regression & Data Classification in Python",
     designation: "RWTH - Machine Learning",
     src: plc,
+    category: "Machine Learning",
+    techStack: ["Python", "Bayesian Regression", "Classification", "Data Processing"],
   },
 
 ];
