@@ -56,7 +56,7 @@ export const links: NavLink[] = [
     href: "#about",
   },
   {
-    title: "Skill",
+    title: "Skills",
     icon: <IconAdjustmentsCode className="h-full w-full text-neutral-500 dark:text-neutral-900" />,
     href: "#skill",
   },
@@ -66,7 +66,7 @@ export const links: NavLink[] = [
     href: "#experience",
   },
   {
-    title: "Project",
+    title: "Projects",
     icon: <IconRocket className="h-full w-full text-neutral-500 dark:text-neutral-900" />,
     href: "#project",
   },
