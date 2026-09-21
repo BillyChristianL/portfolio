@@ -584,7 +584,7 @@ const Experience = () => {
             className='relative pb-8 last:pb-0'
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
+            viewport={{ once: true, amount: 0.01 }}
             transition={{ duration: 0.55, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
           >
             <span className='absolute -left-9 top-1 flex h-7 w-7 items-center justify-center rounded-md border border-darkHover bg-white text-darkHover shadow-[2px_2px_0_#000]'>
